@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <body>
+    <div>
+      Test casting!!
+    </div>
+    <div id = "text1"> </div>
+    <div id = "text2"> </div>
+    <div id = "text3"> </div>
+    <div style='position:fixed; height:100%; width:100%; top:0;'>
+      <img id='report-image' style='height:100%;'>
+    </div>
+    <img id='test' style='position:fixed; top:30px;'>
+  </body>
+  
+<script>
+  
+  if (true) {
+    navigator.presentation.receiver.connectionList.then(list => {
+      list.connections.map(connection => {
+        addConnection(connection);
+      });
+      list.onconnectionavailable = (evt) => {
+        addConnection(evt.connection);
+      };
+    });
+  }
+   function addConnection(connection) {
+     var testing = document.getElementById("test");
+     //testing.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
+     document.getElementById("text1").innerHTML = "connected to: " + connection.id;
+     connection.onmessage = (message) => {
+      // testing.src = "https://fit-cats.com/wp-content/uploads/2016/07/2-male-cats.jpg";
+       document.getElementById("text2").innerHTML = "message: " + message;
+       document.getElementById("text3").innerHTML = "message.data: " + message.data;
+       
+       /*
+       const svgData = message.data;
+       console.log(svgData);
+       var img = document.getElementById("report-image");
+       img.src = svgData;
+       */
+     };
+   }
+</script>
+  
+</html>
