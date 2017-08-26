@@ -2,10 +2,11 @@
 <html>
   <body>
     <div>
-      Test casting!!!
+      Test casting!!
     </div>
     <div id = "text1"> </div>
     <div id = "text2"> </div>
+    <div id = "text3"> </div>
     <div style='position:fixed; height:100%; width:100%; top:0;'>
       <img id='report-image' style='height:100%;'>
     </div>
@@ -25,11 +26,20 @@
     });
   }
    function addConnection(connection) {
+     var testing = document.getElementById("test");
+     //testing.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
      document.getElementById("text1").innerHTML = "connected to: " + connection.id;
-     var image = document.getElementById("test");
      connection.onmessage = (message) => {
+      // testing.src = "https://fit-cats.com/wp-content/uploads/2016/07/2-male-cats.jpg";
        document.getElementById("text2").innerHTML = "message received!";
-       image.src = message.data;
+       testing.src = message.data;
+       
+       /*
+       const svgData = message.data;
+       console.log(svgData);
+       var img = document.getElementById("report-image");
+       img.src = svgData;
+       */
      };
    }
 </script>
