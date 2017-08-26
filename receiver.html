@@ -31,13 +31,8 @@
      document.getElementById("text1").innerHTML = "connected to: " + connection.id;
      connection.onmessage = (message) => {
        document.getElementById("text2").innerHTML = "message received!";
-      // document.getElementById("text3").innerHTML = "message.data: " + message.data;
+       document.getElementById("text3").innerHTML = "message.data: " + message.data;
      //  testing.src = message.data;
-       var img = new Image();
-       img.src = message.data;
-       document.body.appendChild(img);
-       img.style.position = "absolute";
-       img.style.top = "30px";
      };
    }
 </script>
