@@ -2,13 +2,14 @@
 <html>
   <body>
     <div>
-      Test casting!!
+      Test casting!!!
     </div>
     <div id = "text1"> </div>
     <div id = "text2"> </div>
     <div style='position:fixed; height:100%; width:100%; top:0;'>
       <img id='report-image' style='height:100%;'>
     </div>
+    <img id='test' style='position:fixed; top:30px;'>
   </body>
   
 <script>
@@ -25,7 +26,7 @@
   }
    function addConnection(connection) {
      document.getElementById("text1").innerHTML = "connected to: " + connection.id;
-     var image = document.getElementById("report-image");
+     var image = document.getElementById("test");
      connection.onmessage = (message) => {
        document.getElementById("text2").innerHTML = "message received!";
        image.src = message.data;
