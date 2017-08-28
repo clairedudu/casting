@@ -38,8 +38,12 @@
      connection.onmessage = (message) => {
        document.getElementById("text2").innerHTML = "message received!";
        //document.getElementById("text3").innerHTML = "message.data: " + message.data;
-       dataUrl = message.data;
-       img.src = message.data;
+       var svg = new Blob([message.data], {type: 'image/svg+xml'});
+       console.log("svg: " + svg);
+       var DOMURL = window.URL || window.webkitURL || window;
+       var url = DOMURL.createObjectURL(svg);
+       
+       img.src = url;
      };
    }
 </script>
