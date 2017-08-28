@@ -16,7 +16,7 @@
 <script>
   var dataUrl;
   var img = document.getElementById("report-image");
-  img.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
+ // img.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
   
   if (navigator.presentation.receiver) {
     navigator.presentation.receiver.connectionList.then(list => {
@@ -34,7 +34,7 @@
        document.getElementById("text2").innerHTML = "message received!";
        document.getElementById("text3").innerHTML = "message.data: " + message.data;
        dataUrl = message.data;
-     //  img.src = message.data;
+       img.src = message.data;
      };
    }
 </script>
