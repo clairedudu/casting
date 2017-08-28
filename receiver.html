@@ -7,13 +7,12 @@
     <div id = "text1"> </div>
     <div id = "text2"> </div>
     <div id = "text3"> </div>
-    <div style='background: #000;
+    <div id='report-image' style='background: #000;
                 display: block;
                 height: 100vh;
                 object-fit: contain;
                 position: fixed;
                 width: 100vw;'>
-      <img id='report-image' style='height:100%;'>
     </div>
     <img id='test' style='position:fixed; top:30px;'>
   </body>
@@ -21,7 +20,7 @@
 <script>
   var dataUrl;
   var img = document.getElementById("report-image");
-//  img.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
+ img.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
   
   if (navigator.presentation.receiver) {
     navigator.presentation.receiver.connectionList.then(list => {
