@@ -1,12 +1,14 @@
 <!doctype html>
 <html>
   <body>
+    <!--
     <div>
       Test casting!
     </div>
     <div id = "text1"> </div>
     <div id = "text2"> </div>
     <div id = "text3"> </div>
+!-->
     <div id='report-image' style='background: #000;
                 display: block;
                 height: 100vh;
@@ -14,13 +16,11 @@
                 position: fixed;
                 width: 100vw;'>
     </div>
-    <img id='test' style='position:fixed; top:30px;'>
   </body>
   
 <script>
   var dataUrl;
   var img = document.getElementById("report-image");
-// img.src = "https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg";
   
   if (navigator.presentation.receiver) {
     navigator.presentation.receiver.connectionList.then(list => {
@@ -35,18 +35,9 @@
    function addConnection(connection) {
   //   document.getElementById("text1").innerHTML = "connected to: " + connection.id;
      connection.onmessage = (message) => {
-       document.getElementById("text2").innerHTML = "message received!";
+      // document.getElementById("text2").innerHTML = "message received!";
        //document.getElementById("text3").innerHTML = "message.data: " + message.data;
        img.outerHTML += message.data;
-       
-       /* this didn't work
-       var svg = new Blob([message.data], {type: 'image/svg+xml'});
-       console.log("svg: " + svg);
-       var DOMURL = window.URL || window.webkitURL || window;
-       var url = DOMURL.createObjectURL(svg);
-       
-       img.src = url;
-       */
      };
    }
 </script>
