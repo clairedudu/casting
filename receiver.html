@@ -11,10 +11,10 @@
 -->
     <div style='background: #000;
                 display: block;
-                height: 600px;
+                height: 100vh;
                 object-fit: contain;
-                width: 450px;'>
-      <div id='report-image' style='height: 100%; width: 100%;'> </div>
+                width: 100vw;'>
+      <div id='report-image' style='height: 100%; width: 100%; object-fit: contain;'> </div>
     </div>
   </body>
   
@@ -39,7 +39,7 @@
        //document.getElementById("text3").innerHTML = "message.data: " + message.data;
       
        var svg = message.data;
-       img.innerHTML = svg;
+       img.src = svg;
        
        //img.src = message.data;
      };
