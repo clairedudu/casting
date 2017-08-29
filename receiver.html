@@ -6,15 +6,15 @@
       Test casting!
     </div>
     <div id = "text1"> </div>
-    <div id = "text2"> </div>
     <div id = "text3"> </div>
 -->
+    <div id = "text2"> </div>
     <div style='background: #000;
                 display: block;
                 height: 100vh;
                 object-fit: contain;
                 width: 100vw;'>
-      <img id='report-image' style='height: 100%; width: 100%; object-fit: contain;'> </img>
+      <img id='report-image' style='max-height:100%; max-width:100%; margin:auto; display:block;'> </img>
     </div>
   </body>
   
@@ -35,7 +35,7 @@
    function addConnection(connection) {
   //   document.getElementById("text1").innerHTML = "connected to: " + connection.id;
      connection.onmessage = (message) => {
-      // document.getElementById("text2").innerHTML = "message received!";
+       document.getElementById("text2").innerHTML = "message received!";
        //document.getElementById("text3").innerHTML = "message.data: " + message.data;
       
        var svg = message.data;
