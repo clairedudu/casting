@@ -7,7 +7,7 @@
                 width: 100vw;
                 object-fit: contain;
                 position: fixed;'>
-      <img id='report-image' style='max-height:100%; max-width:100%; margin:auto; display:block;'></img>
+      <img class='report-image' style='max-height:100%; max-width:100%; margin:auto; display:block;'></img>
     </div>
   </body>
 
@@ -22,12 +22,11 @@
       };
     });
   }
-   function addConnection(connection) {
-    const img = document.getElementById("report-image");
-    let pngData;
+
+  function addConnection(connection) {
+    const img = document.getElementsByClassName("report-image")[0];
     connection.onmessage = (message) => {
-      pngData = message.data;
-      img.src = pngData;
+      img.src = message.data;
     };
    }
 </script>
